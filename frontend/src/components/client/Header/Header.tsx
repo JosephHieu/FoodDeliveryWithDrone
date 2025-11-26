@@ -10,6 +10,7 @@ import useGetCurrentUser from "../../../hooks/useGetCurrentUser";
 import useGetCart from "../../../hooks/client/useGetCart";
 import MenuSideCart from "./MenuSideCart";
 import { HashLink } from "react-router-hash-link";
+import PromoBar from "./promo-bar";
 function Header() {
   const { user } = useGetCurrentUser("client");
   const { cart } = useGetCart(user?.id || "");
@@ -58,24 +59,31 @@ function Header() {
   }, []);
   return (
     <>
+      <PromoBar></PromoBar>
       <header className="w-full bg-white sticky top-0 border-b border-gray-200 z-[15] text-black">
         <div className=" py-[15px] px-[15px] relative">
           <div className="w-full max-w-[1200px] mx-auto flex justify-between items-center">
             <Link to={"/"}>
-              <h2 className="!text-[#C62028]">Foodfast</h2>
+              {/* <h2 className="!text-[#C62028]">Foodfast</h2> */}
+              <div className="flex-shrink-0">
+                <h1 className="text-2xl font-bold">
+                  <span className="text-red-500">Meal</span>
+                  <span className="text-black">MATE</span>
+                </h1>
+              </div>
             </Link>
 
             <nav className="hidden lg:block">
               <ul className="flex items-center gap-[30px] text-[0.9rem] font-semibold uppercase">
                 <li className="cursor-pointer relative after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-full after:h-[1.5px] after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">
                   <HashLink smooth to="/#menu">
-                    Thực đơn
+                    Món Ăn
                   </HashLink>
                 </li>
 
                 <li className="cursor-pointer relative after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-full after:h-[1.5px] after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">
                   <HashLink smooth to="/#restaurant">
-                    Hệ thống nhà hàng
+                    Địa điểm nhà hàng
                   </HashLink>
                 </li>
               </ul>

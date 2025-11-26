@@ -1,135 +1,91 @@
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-function Footer() {
+export default function Footer() {
+  const footerSections = [
+    {
+      title: "Về MealMATE",
+      links: ["Giới thiệu", "Tuyển dụng", "Blog", "Liên hệ"],
+    },
+    {
+      title: "Hỗ trợ khách hàng",
+      links: [
+        "Trung tâm trợ giúp",
+        "Hướng dẫn đặt hàng",
+        "Chính sách hoàn trả",
+        "Điều khoản sử dụng",
+      ],
+    },
+    {
+      title: "Nhà hàng",
+      links: [
+        "Đăng ký nhà hàng",
+        "Quản lý nhà hàng",
+        "Chính sách nhà hàng",
+        "Hỗ trợ nhà hàng",
+      ],
+    },
+    {
+      title: "Theo dõi chúng tôi",
+      links: ["Facebook", "Instagram", "Twitter", "TikTok"],
+    },
+  ];
+
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 px-[15px]">
-      <div className="mx-auto w-full max-w-[1200px]">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 py-8">
-          <div className="col-span-full lg:col-span-1  space-y-4">
-            <Link to={"/"}>
-              <h2 className="text-[#C62028]">Foodfast</h2>
-            </Link>
-            <p className=" text-gray-500">
-              Foodfast nhận đặt hàng trực tuyến và giao hàng tận nơi bằng drone.
-            </p>
-          </div>
-
-          <div className="lg:mx-auto text-left space-y-4">
-            <h5 className="relative font-bold text-black uppercase">
-              Các trang
-            </h5>
-            <ul className="transition-all duration-500 text-[0.9rem] space-y-4">
-              <li>
-                <Link
-                  to="/"
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Trang chủ
-                </Link>
-              </li>
-
-              <li>
-                <HashLink
-                  smooth
-                  to="/#menu"
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Thực đơn
-                </HashLink>
-              </li>
-
-              <li>
-                <HashLink
-                  smooth
-                  to="/#restaurant"
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Hệ thống nhà hàng
-                </HashLink>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:mx-auto text-left space-y-4">
-            <h5 className="relative font-bold text-black uppercase">DỊCH VỤ</h5>
-            <ul className="transition-all duration-500 text-[0.9rem] space-y-4">
-              <li>
-                <Link
-                  to="/"
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Điều khoản sử dụng
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to={"/"}
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Chính sách bảo mật thông tin cá nhân
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to={"/"}
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Chính sách bảo mật thanh toán
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to={"/"}
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Giới thiệu KFC
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:mx-auto text-left space-y-4">
-            <h5 className="relative font-bold text-black uppercase">Hỗ trợ</h5>
-            <ul className="transition-all duration-500 text-[0.9rem] space-y-4">
-              <li>
-                <Link
-                  to="/"
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Chính sách đổi - trả - hoàn tiền
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to={"/"}
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Chính sách bảo hành - bồi hoàn
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to={"/"}
-                  className=" text-gray-500 font-medium text-[0.9rem] hover:text-black"
-                >
-                  Chính sách vận chuyển
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-gray-900 text-gray-300 py-12">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {footerSections.map((section, index) => (
+            <div key={index}>
+              <h3 className="text-white font-semibold text-lg mb-4">
+                {section.title}
+              </h3>
+              <ul className="space-y-2">
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <a
+                      href="#"
+                      className="hover:text-white transition-colors duration-200"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="py-4 border-t border-gray-200 text-center">
-          <p className="font-medium text-gray-500">© Foodfast Vietnam 2025</p>
+        {/* Divider */}
+        <div className="border-t border-gray-700 pt-8 mt-8">
+          {/* Bottom Section */}
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <p className="text-sm text-gray-400">
+                © 2025 MealMATE. Tất cả quyền được bảo lưu.
+              </p>
+            </div>
+            <div className="flex gap-6">
+              <a
+                href="#"
+                className="text-sm hover:text-white transition-colors duration-200"
+              >
+                Chính sách bảo mật
+              </a>
+              <a
+                href="#"
+                className="text-sm hover:text-white transition-colors duration-200"
+              >
+                Điều khoản dịch vụ
+              </a>
+              <a
+                href="#"
+                className="text-sm hover:text-white transition-colors duration-200"
+              >
+                Cài đặt cookie
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;
