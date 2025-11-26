@@ -110,12 +110,12 @@ function MenuSide({ menuOpen, toggleMenu }: Props) {
         className={` ${menuOpen ? "left-0" : "left-[-100%]"} 
         ${
           menuOpen ? "xl:translate-x-[-100%] xl:p-0 xl:w-0" : "xl:translate-x-0"
-        } custom-scroll fixed border top-0 h-screen w-[320px] pb-5 bg-white transition-all duration-350 ease-in-out z-100 xl:sticky overflow-y-auto border-b border-gray-200`}
+        } custom-scroll fixed top-0 h-screen w-[320px] pb-5 bg-[#0A213A] transition-all duration-350 ease-in-out z-100 xl:sticky overflow-y-auto`}
       >
-        <div className="mb-[20px] flex justify-center sticky top-0 bg-white px-3.5 py-4.5">
-          <h2 className="text-[#C62028]">MealMate</h2>
+        <div className="mb-[20px] flex justify-center sticky top-0 bg-[#0A213A] px-3.5 py-4.5">
+          <h2 className="text-[#3A82F7] font-bold">MealMate</h2>
         </div>
-        <ul className="flex flex-col gap-[15px] font-semibold px-3.5">
+        <ul className="flex flex-col gap-[15px] font-semibold px-3.5 text-white">
           {menuData.map((group, groupIndex) => (
             <div key={groupIndex} className="flex flex-col gap-[10px]">
               <p className="  uppercase">{group.title}</p>
@@ -128,8 +128,8 @@ function MenuSide({ menuOpen, toggleMenu }: Props) {
                         className={`${
                           openMenus[item.key] ||
                           item.children.some((child) => pathname === child.path)
-                            ? "text-[#C62028]"
-                            : "hover:bg-gray-100"
+                            ? "text-[#3A82F7]"
+                            : "hover:bg-[#3A82F7] hover:text-white"
                         } rounded-lg p-3 w-full cursor-pointer flex justify-between items-center`}
                       >
                         <p className="font-medium flex items-center gap-[10px]">
@@ -159,8 +159,8 @@ function MenuSide({ menuOpen, toggleMenu }: Props) {
                             key={childIndex}
                             className={`rounded-lg w-full cursor-pointer my-[5px] ${
                               pathname === child.path
-                                ? "text-white bg-[#C62028]"
-                                : "hover:bg-gray-100"
+                                ? "text-white bg-[#3A82F7]"
+                                : "hover:bg-[#3A82F7] hover:text-white"
                             }`}
                           >
                             <Link
@@ -178,8 +178,8 @@ function MenuSide({ menuOpen, toggleMenu }: Props) {
                       to={item.path}
                       className={`${
                         pathname === item.path
-                          ? "text-white bg-[#C62028]"
-                          : "hover:bg-gray-100"
+                          ? "text-white bg-[#3A82F7]"
+                          : "hover:bg-[#3A82F7] hover:text-white"
                       } rounded-lg p-3 w-full cursor-pointer flex justify-between items-center`}
                     >
                       <p className="font-medium flex items-center gap-[10px]">

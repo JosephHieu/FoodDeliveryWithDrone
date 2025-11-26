@@ -38,12 +38,12 @@ function Drone() {
   return (
     <>
       <div className="py-[1.3rem] px-[1.2rem] bg-[#f1f4f9]">
-            <div className="flex justify-between items-center flex-wrap gap-[20px]">
+        <div className="flex justify-between items-center flex-wrap gap-[20px]">
           <h2 className=" text-[#74767d]">Drone ({totalItems})</h2>
 
           <Link
             to={"/admin/add-drone"}
-            className="bg-[#C62028] border-0 cursor-pointer text-[0.9rem] font-medium w-[90px] !flex p-[10px_12px] items-center justify-center gap-[5px] text-white"
+            className="bg-[#3a82f7] border-0 cursor-pointer text-[0.9rem] font-medium w-[90px] !flex p-[10px_12px] items-center justify-center gap-[5px] text-white"
           >
             <IoMdAddCircle size={22} /> Thêm
           </Link>

@@ -116,7 +116,7 @@ function Pagination({ totalPages, currentPage, limit, totalItems }: Props) {
                     onClick={() => goToPage(page as number)}
                     className={`h-8.5 w-8.5 flex justify-center items-center font-medium text-[0.9rem] border border-gray-300 ${
                       currentPage === page
-                        ? "bg-[#C62028] text-white"
+                        ? "bg-[#3a82f7] text-white"
                         : " hover:bg-gray-50"
                     }`}
                   >
