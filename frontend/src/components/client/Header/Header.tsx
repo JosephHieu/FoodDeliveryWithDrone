@@ -9,8 +9,9 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import useGetCurrentUser from "../../../hooks/useGetCurrentUser";
 import useGetCart from "../../../hooks/client/useGetCart";
 import MenuSideCart from "./MenuSideCart";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import PromoBar from "./promo-bar";
+import { MapPin, Search } from "lucide-react";
 function Header() {
   const { user } = useGetCurrentUser("client");
   const { cart } = useGetCart(user?.id || "");
@@ -73,7 +74,31 @@ function Header() {
               </div>
             </Link>
 
-            <nav className="hidden lg:block">
+            {/* Location */}
+            <div className="flex items-center gap-2 text-gray-700">
+              <MapPin size={20} className="text-red-500" />
+              <div>
+                <p className="text-xs text-gray-500">Giao đến</p>
+                <p className="font-semibold">Quận 1, TP.HCM</p>
+              </div>
+            </div>
+
+            {/* Search Bar */}
+            <div className="flex-1 max-w-md">
+              <div className="relative">
+                <Search
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  size={20}
+                />
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm món ăn, nhà hàng..."
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+              </div>
+            </div>
+
+            {/* <nav className="hidden lg:block">
               <ul className="flex items-center gap-[30px] text-[0.9rem] font-semibold uppercase">
                 <li className="cursor-pointer relative after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-full after:h-[1.5px] after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">
                   <HashLink smooth to="/#menu">
@@ -87,7 +112,7 @@ function Header() {
                   </HashLink>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
 
             <div className="hidden lg:flex items-center gap-5">
               <div

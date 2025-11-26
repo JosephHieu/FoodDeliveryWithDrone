@@ -1,39 +1,56 @@
-import { HashLink } from "react-router-hash-link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 function MainBanner() {
+  const banners = [
+    { id: 1, url: "/images/banners/banner2.png", alt: "Banner 1" },
+    { id: 2, url: "/images/banners/banner1.png", alt: "Banner 2" },
+    { id: 3, url: "/images/banners/banner6.png", alt: "Banner 3" },
+  ];
+
   return (
-    <>
-      <section className="mb-[40px] text-black">
-        <div
-          className="relative h-96 flex items-center"
-          style={{
-            backgroundImage: "url('/assets/banner/mainbanner1.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-gray-200 opacity-20"></div>
+    <section className="mb-[40px] text-black">
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
+        pagination={{ clickable: true }}
+        className="h-96"
+      >
+        {banners.map((banner) => (
+          <SwiperSlide key={banner.id}>
+            <div
+              className="relative w-full h-96 flex items-center justify-center"
+              style={{
+                backgroundImage: `url('${banner.url}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              {/* Overlay mờ */}
+              <div className="absolute inset-0"></div>
 
-          <div className="relative z-10 w-full px-6">
-            <div className="mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                Hưởng thức món ngon
-              </h1>
+              {/* Nội dung */}
+              {/* <div className="relative z-10 text-center">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                  Hưởng thức món ngon
+                </h1>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <HashLink
-                  smooth
-                  to="/#menu"
-                  className="bg-primary text-white px-4 py-2 rounded-button text-[0.9rem] font-semibold bg-[#C62028] transition-colors whitespace-nowrap"
+                <a
+                  href="#menu"
+                  className="bg-[#C62028] text-white px-4 py-2 rounded-button text-[0.9rem] font-semibold transition-colors"
                 >
                   Thực đơn
-                </HashLink>
-              </div>
+                </a>
+              </div> */}
             </div>
-          </div>
-        </div>
-      </section>
-    </>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 }
 
