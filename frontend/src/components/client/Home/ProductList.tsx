@@ -60,7 +60,11 @@ function ProductList() {
           id="menu"
         >
           <div className="mx-auto max-w-[1200px] w-full">
-            <h2 className="mb-[20px]">Thực đơn</h2>
+            <div className="flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-gray-800">
+                Hôm nay ăn gì?
+              </h2>
+            </div>
 
             {isLoading ? (
               <Loading height={60} size={50} color="black" thickness={2} />

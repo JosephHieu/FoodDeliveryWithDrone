@@ -79,7 +79,7 @@ function MenuSide({ menuOpen, toggleMenu }: Props) {
         } custom-scroll fixed border top-0 h-screen w-[320px] pb-5 bg-white transition-all duration-350 ease-in-out z-100 xl:sticky overflow-y-auto border-b border-gray-200`}
       >
         <div className="mb-[20px] flex justify-center sticky top-0 bg-white px-3.5 py-4.5">
-          <h2 className="text-[#C62028]">Foodfast</h2>
+          <h2 className="text-[#C62028]">MealMate</h2>
         </div>
         <ul className="flex flex-col gap-[15px] font-semibold px-3.5">
           {menuData.map((group, groupIndex) => (

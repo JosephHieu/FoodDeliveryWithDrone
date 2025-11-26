@@ -65,7 +65,6 @@ function Header() {
         <div className=" py-[15px] px-[15px] relative">
           <div className="w-full max-w-[1200px] mx-auto flex justify-between items-center">
             <Link to={"/"}>
-              {/* <h2 className="!text-[#C62028]">Foodfast</h2> */}
               <div className="flex-shrink-0">
                 <h1 className="text-2xl font-bold">
                   <span className="text-red-500">Meal</span>

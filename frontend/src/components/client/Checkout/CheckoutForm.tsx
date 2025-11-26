@@ -130,7 +130,7 @@ function CheckoutForm() {
     <section className="my-[40px] px-[15px] text-black">
       <div className="mx-auto max-w-[1200px] w-full">
         <Link to={"/"}>
-          <h2 className="text-[#C62028]">Foodfast</h2>
+          <h2 className="text-[#C62028]">MealMate</h2>
         </Link>
 
         <hr className="border-gray-300 my-[15px]" />
