@@ -51,7 +51,7 @@ function MenuMobile({ isOpen, toggleMenu }: MenuMobileProps) {
 
           <li className="border-b border-gray-300 cursor-pointer">
             <a href="/#restaurant" className="py-[15px]">
-              Hệ thống nhà hàng
+              Danh Sách nhà hàng
             </a>
           </li>
         </ul>

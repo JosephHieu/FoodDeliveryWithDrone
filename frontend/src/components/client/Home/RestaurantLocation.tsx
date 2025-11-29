@@ -9,7 +9,7 @@ function RestaurantLocation() {
       id="restaurant"
     >
       <div className="mx-auto max-w-[1200px] w-full">
-        <h2 className="mb-[20px]">Hệ thống nhà hàng</h2>
+        <h2 className="mb-[20px]">Danh sách nhà hàng</h2>
         <LeafletMap restaurants={restaurants} />
       </div>
     </section>
