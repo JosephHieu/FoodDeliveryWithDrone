@@ -14,8 +14,6 @@ Một nền tảng giao đồ ăn hiện đại, có khả năng mở rộng v�
 - [Chạy Ứng Dụng](#chạy-ứng-dụng)
 - [Tài Liệu API](#tài-liệu-api)
 - [Cấu Trúc Dự Án](#cấu-trúc-dự-án)
-- [Đóng Góp](#đóng-góp)
-- [Giấy Phép](#giấy-phép)
 
 ## 🌟 Tổng Quan
 
