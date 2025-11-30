@@ -72,5 +72,5 @@ public interface DroneRepository extends MongoRepository<Drone, String> {
             List<String> restaurantIds,
             String model,
             Pageable pageable
-    );
+    )
 }
